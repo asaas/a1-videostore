@@ -1,4 +1,17 @@
+buildscript {
+    ext {
+        kotlin_version = '1.1.2-4'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'org.jetbrains.kotlin', name: 'kotlin-gradle-plugin', version: kotlin_version
+    }
+}
+
 apply plugin: 'java'
+apply plugin: 'kotlin'
 
 sourceCompatibility = 1.8
 
@@ -7,5 +20,6 @@ repositories {
 }
 
 dependencies {
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jre8', version: kotlin_version
     testCompile group: 'junit', name: 'junit', version:'4.12'
 }
